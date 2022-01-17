@@ -1,10 +1,25 @@
 package com.codeclan.example.employeetracking.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "employees")
 public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "age")
     private int age;
+
+    @Column(name = "employeeNumber")
     private int employeeNumber;
+
+    @Column(name = "email")
     private String email;
 
     public Employee() {
